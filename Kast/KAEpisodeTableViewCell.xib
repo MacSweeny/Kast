@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="EpisodeTableViewCellIdentifier" rowHeight="90" id="FBW-6E-Mnh" customClass="KAEpisodeTableViewCell" customModule="Kast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FBW-6E-Mnh" id="lKv-VI-UXu">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title lorem ipsum lorem ipsum lorem ipsum lorem ipsum" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dY-F4-Zwg">
+                        <rect key="frame" x="18" y="11" width="237" height="41"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publication Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceI-br-zFM">
+                        <rect key="frame" x="18" y="56" width="237" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="82" id="p9Y-cI-ZpU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="p9Y-cI-ZpU"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ceI-br-zFM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7dY-F4-Zwg" secondAttribute="bottom" constant="4" id="9CX-Uc-Y9o"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ceI-br-zFM" secondAttribute="bottom" constant="2" id="CaZ-KR-bFK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7dY-F4-Zwg" secondAttribute="trailing" constant="10" id="D1X-dc-AxX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ceI-br-zFM" secondAttribute="trailing" constant="10" id="L8n-Qo-JXp"/>
+                    <constraint firstItem="ceI-br-zFM" firstAttribute="leading" secondItem="lKv-VI-UXu" secondAttribute="leadingMargin" constant="10" id="WeJ-Pt-uVK"/>
+                    <constraint firstItem="7dY-F4-Zwg" firstAttribute="top" secondItem="lKv-VI-UXu" secondAttribute="topMargin" constant="3.5" id="Zre-op-sqm"/>
+                    <constraint firstItem="7dY-F4-Zwg" firstAttribute="leading" secondItem="lKv-VI-UXu" secondAttribute="leadingMargin" constant="10" id="ii7-eq-yzA"/>
+                    <constraint firstItem="ceI-br-zFM" firstAttribute="top" secondItem="lKv-VI-UXu" secondAttribute="topMargin" constant="3" id="vZC-xX-MpA"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="vZC-xX-MpA"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="ceI-br-zFM" id="Yud-im-q41"/>
+                <outlet property="titleLabel" destination="7dY-F4-Zwg" id="Bvk-6s-0ac"/>
+            </connections>
+            <point key="canvasLocation" x="165" y="22"/>
+        </tableViewCell>
+    </objects>
+</document>

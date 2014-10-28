@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PodcastTableViewCellIdentifier" id="74t-Zr-Kuj" customClass="KAPodcastTableViewCell" customModule="Kast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="74t-Zr-Kuj" id="JTX-Vr-uBH">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUm-8d-Mga">
+                        <rect key="frame" x="18" y="11" width="304" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="tUm-8d-Mga" secondAttribute="bottom" constant="3.5" id="9gr-8O-LcV"/>
+                    <constraint firstItem="tUm-8d-Mga" firstAttribute="top" secondItem="JTX-Vr-uBH" secondAttribute="topMargin" constant="3" id="K2i-wj-Sk4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tUm-8d-Mga" secondAttribute="trailing" constant="-10" id="No9-gi-e71"/>
+                    <constraint firstItem="tUm-8d-Mga" firstAttribute="leading" secondItem="JTX-Vr-uBH" secondAttribute="leadingMargin" constant="10" id="lvy-HE-dNi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="tUm-8d-Mga" id="5LM-zB-Pm8"/>
+            </connections>
+            <point key="canvasLocation" x="236" y="121"/>
+        </tableViewCell>
+    </objects>
+</document>

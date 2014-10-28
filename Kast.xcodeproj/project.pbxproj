@@ -9,11 +9,34 @@
 /* Begin PBXBuildFile section */
 		4423AEF919F8160300C1556C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AEF819F8160300C1556C /* AppDelegate.swift */; };
 		4423AEFC19F8160300C1556C /* Kast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4423AEFA19F8160300C1556C /* Kast.xcdatamodeld */; };
-		4423AEFE19F8160300C1556C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AEFD19F8160300C1556C /* ViewController.swift */; };
 		4423AF0119F8160300C1556C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4423AEFF19F8160300C1556C /* Main.storyboard */; };
 		4423AF0319F8160300C1556C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4423AF0219F8160300C1556C /* Images.xcassets */; };
 		4423AF0619F8160300C1556C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4423AF0419F8160300C1556C /* LaunchScreen.xib */; };
 		4423AF1219F8160300C1556C /* KastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF1119F8160300C1556C /* KastTests.swift */; };
+		4423AF2819F817AF00C1556C /* KastFeedKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4423AF2719F817AF00C1556C /* KastFeedKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4423AF3419F817AF00C1556C /* KastFeedKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF3319F817AF00C1556C /* KastFeedKitTests.m */; };
+		4423AF3719F817AF00C1556C /* KastFeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4423AF2319F817AF00C1556C /* KastFeedKit.framework */; };
+		4423AF3819F817AF00C1556C /* KastFeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4423AF2319F817AF00C1556C /* KastFeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4423AF4319F8180500C1556C /* KAPodcastsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF4219F8180500C1556C /* KAPodcastsTableViewController.swift */; };
+		4423AF4619F8184700C1556C /* KFFeedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4423AF4419F8184700C1556C /* KFFeedParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4423AF4719F8184700C1556C /* KFFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF4519F8184700C1556C /* KFFeedParser.m */; };
+		4423AF4A19F8187700C1556C /* KFChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4423AF4819F8187700C1556C /* KFChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4423AF4B19F8187700C1556C /* KFChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF4919F8187700C1556C /* KFChannel.m */; };
+		4423AF4E19F8188200C1556C /* KFItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4423AF4C19F8188200C1556C /* KFItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4423AF4F19F8188200C1556C /* KFItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF4D19F8188200C1556C /* KFItem.m */; };
+		4423AF5219F8188B00C1556C /* KFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4423AF5019F8188A00C1556C /* KFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4423AF5319F8188B00C1556C /* KFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF5119F8188B00C1556C /* KFImage.m */; };
+		4423AF5619F81AFD00C1556C /* KACoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF5519F81AFD00C1556C /* KACoreDataStack.swift */; };
+		4423AF5C19F81E5900C1556C /* KAPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF5B19F81E5900C1556C /* KAPodcast.swift */; };
+		4423AF5E19F81E5900C1556C /* KAEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF5D19F81E5900C1556C /* KAEpisode.swift */; };
+		4423AF6119F81EAE00C1556C /* KAPodcastDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF6019F81EAE00C1556C /* KAPodcastDataService.swift */; };
+		4423AF6319F81EB900C1556C /* KAPodcastSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF6219F81EB900C1556C /* KAPodcastSyncService.swift */; };
+		4423AF6519F81FA300C1556C /* KAEpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423AF6419F81FA300C1556C /* KAEpisodesTableViewController.swift */; };
+		4474433419F82B2600899DBE /* KAEpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4474433319F82B2600899DBE /* KAEpisodeTableViewCell.xib */; };
+		4474433619F82B5300899DBE /* KAPodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4474433519F82B5300899DBE /* KAPodcastTableViewCell.xib */; };
+		4474433819F82B8100899DBE /* KAEpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474433719F82B8100899DBE /* KAEpisodeTableViewCell.swift */; };
+		4474433A19F82B8F00899DBE /* KAPodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474433919F82B8F00899DBE /* KAPodcastTableViewCell.swift */; };
+		4477683519FF0A86004248C6 /* rss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4477683319FF0A86004248C6 /* rss.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,20 +47,81 @@
 			remoteGlobalIDString = 4423AEF219F8160300C1556C;
 			remoteInfo = Kast;
 		};
+		4423AF2E19F817AF00C1556C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4423AEEB19F8160300C1556C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4423AEF219F8160300C1556C;
+			remoteInfo = Kast;
+		};
+		4423AF3519F817AF00C1556C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4423AEEB19F8160300C1556C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4423AF2219F817AF00C1556C;
+			remoteInfo = KastFeedKit;
+		};
+		4423AF3919F817AF00C1556C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4423AEEB19F8160300C1556C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4423AF2219F817AF00C1556C;
+			remoteInfo = KastFeedKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4423AF3E19F817AF00C1556C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4423AF3819F817AF00C1556C /* KastFeedKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4423AEF319F8160300C1556C /* Kast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423AEF719F8160300C1556C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4423AEF819F8160300C1556C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4423AEFB19F8160300C1556C /* Kast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kast.xcdatamodel; sourceTree = "<group>"; };
-		4423AEFD19F8160300C1556C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4423AF0019F8160300C1556C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4423AF0219F8160300C1556C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4423AF0519F8160300C1556C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4423AF0B19F8160300C1556C /* KastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4423AF1019F8160300C1556C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4423AF1119F8160300C1556C /* KastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KastTests.swift; sourceTree = "<group>"; };
+		4423AF2319F817AF00C1556C /* KastFeedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KastFeedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4423AF2619F817AF00C1556C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4423AF2719F817AF00C1556C /* KastFeedKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KastFeedKit.h; sourceTree = "<group>"; };
+		4423AF2D19F817AF00C1556C /* KastFeedKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KastFeedKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4423AF3219F817AF00C1556C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4423AF3319F817AF00C1556C /* KastFeedKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KastFeedKitTests.m; sourceTree = "<group>"; };
+		4423AF4219F8180500C1556C /* KAPodcastsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastsTableViewController.swift; sourceTree = "<group>"; };
+		4423AF4419F8184700C1556C /* KFFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFFeedParser.h; sourceTree = "<group>"; };
+		4423AF4519F8184700C1556C /* KFFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFFeedParser.m; sourceTree = "<group>"; };
+		4423AF4819F8187700C1556C /* KFChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFChannel.h; sourceTree = "<group>"; };
+		4423AF4919F8187700C1556C /* KFChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFChannel.m; sourceTree = "<group>"; };
+		4423AF4C19F8188200C1556C /* KFItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFItem.h; sourceTree = "<group>"; };
+		4423AF4D19F8188200C1556C /* KFItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFItem.m; sourceTree = "<group>"; };
+		4423AF5019F8188A00C1556C /* KFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFImage.h; sourceTree = "<group>"; };
+		4423AF5119F8188B00C1556C /* KFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFImage.m; sourceTree = "<group>"; };
+		4423AF5519F81AFD00C1556C /* KACoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KACoreDataStack.swift; sourceTree = "<group>"; };
+		4423AF5B19F81E5900C1556C /* KAPodcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcast.swift; sourceTree = "<group>"; };
+		4423AF5D19F81E5900C1556C /* KAEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAEpisode.swift; sourceTree = "<group>"; };
+		4423AF6019F81EAE00C1556C /* KAPodcastDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastDataService.swift; sourceTree = "<group>"; };
+		4423AF6219F81EB900C1556C /* KAPodcastSyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastSyncService.swift; sourceTree = "<group>"; };
+		4423AF6419F81FA300C1556C /* KAEpisodesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAEpisodesTableViewController.swift; sourceTree = "<group>"; };
+		445DB97219FB03A500166491 /* Kast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kast-Bridging-Header.h"; sourceTree = "<group>"; };
+		4474433319F82B2600899DBE /* KAEpisodeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAEpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		4474433519F82B5300899DBE /* KAPodcastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAPodcastTableViewCell.xib; sourceTree = "<group>"; };
+		4474433719F82B8100899DBE /* KAEpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAEpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		4474433919F82B8F00899DBE /* KAPodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastTableViewCell.swift; sourceTree = "<group>"; };
+		4477683319FF0A86004248C6 /* rss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = rss.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,10 +129,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4423AF3719F817AF00C1556C /* KastFeedKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4423AF0819F8160300C1556C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423AF1F19F817AF00C1556C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423AF2A19F817AF00C1556C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +162,8 @@
 			children = (
 				4423AEF519F8160300C1556C /* Kast */,
 				4423AF0E19F8160300C1556C /* KastTests */,
+				4423AF2419F817AF00C1556C /* KastFeedKit */,
+				4423AF3019F817AF00C1556C /* KastFeedKitTests */,
 				4423AEF419F8160300C1556C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +173,8 @@
 			children = (
 				4423AEF319F8160300C1556C /* Kast.app */,
 				4423AF0B19F8160300C1556C /* KastTests.xctest */,
+				4423AF2319F817AF00C1556C /* KastFeedKit.framework */,
+				4423AF2D19F817AF00C1556C /* KastFeedKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,11 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				4423AEF819F8160300C1556C /* AppDelegate.swift */,
-				4423AEFD19F8160300C1556C /* ViewController.swift */,
 				4423AEFF19F8160300C1556C /* Main.storyboard */,
-				4423AF0219F8160300C1556C /* Images.xcassets */,
-				4423AF0419F8160300C1556C /* LaunchScreen.xib */,
-				4423AEFA19F8160300C1556C /* Kast.xcdatamodeld */,
+				4423AF1B19F816C500C1556C /* Controllers */,
+				4423AF5419F81AE300C1556C /* Model */,
+				4423AF5F19F81E8500C1556C /* Services */,
+				4423AF6619F8208E00C1556C /* Views */,
 				4423AEF619F8160300C1556C /* Supporting Files */,
 			);
 			path = Kast;
@@ -93,7 +196,10 @@
 		4423AEF619F8160300C1556C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4423AF0219F8160300C1556C /* Images.xcassets */,
+				445DB97219FB03A500166491 /* Kast-Bridging-Header.h */,
 				4423AEF719F8160300C1556C /* Info.plist */,
+				4423AF0419F8160300C1556C /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,7 +221,113 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4423AF1B19F816C500C1556C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF6419F81FA300C1556C /* KAEpisodesTableViewController.swift */,
+				4423AF4219F8180500C1556C /* KAPodcastsTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4423AF2419F817AF00C1556C /* KastFeedKit */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF2719F817AF00C1556C /* KastFeedKit.h */,
+				4423AF4819F8187700C1556C /* KFChannel.h */,
+				4423AF4919F8187700C1556C /* KFChannel.m */,
+				4423AF4419F8184700C1556C /* KFFeedParser.h */,
+				4423AF4519F8184700C1556C /* KFFeedParser.m */,
+				4423AF5019F8188A00C1556C /* KFImage.h */,
+				4423AF5119F8188B00C1556C /* KFImage.m */,
+				4423AF4C19F8188200C1556C /* KFItem.h */,
+				4423AF4D19F8188200C1556C /* KFItem.m */,
+				4423AF2519F817AF00C1556C /* Supporting Files */,
+			);
+			path = KastFeedKit;
+			sourceTree = "<group>";
+		};
+		4423AF2519F817AF00C1556C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF2619F817AF00C1556C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4423AF3019F817AF00C1556C /* KastFeedKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF3319F817AF00C1556C /* KastFeedKitTests.m */,
+				4477683219FF0A5D004248C6 /* Fixtures */,
+				4423AF3119F817AF00C1556C /* Supporting Files */,
+			);
+			path = KastFeedKitTests;
+			sourceTree = "<group>";
+		};
+		4423AF3119F817AF00C1556C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF3219F817AF00C1556C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4423AF5419F81AE300C1556C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4423AEFA19F8160300C1556C /* Kast.xcdatamodeld */,
+				4423AF5D19F81E5900C1556C /* KAEpisode.swift */,
+				4423AF5B19F81E5900C1556C /* KAPodcast.swift */,
+				4423AF5519F81AFD00C1556C /* KACoreDataStack.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4423AF5F19F81E8500C1556C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4423AF6019F81EAE00C1556C /* KAPodcastDataService.swift */,
+				4423AF6219F81EB900C1556C /* KAPodcastSyncService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4423AF6619F8208E00C1556C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4474433319F82B2600899DBE /* KAEpisodeTableViewCell.xib */,
+				4474433719F82B8100899DBE /* KAEpisodeTableViewCell.swift */,
+				4474433519F82B5300899DBE /* KAPodcastTableViewCell.xib */,
+				4474433919F82B8F00899DBE /* KAPodcastTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4477683219FF0A5D004248C6 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				4477683319FF0A86004248C6 /* rss.xml */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4423AF2019F817AF00C1556C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423AF4619F8184700C1556C /* KFFeedParser.h in Headers */,
+				4423AF4A19F8187700C1556C /* KFChannel.h in Headers */,
+				4423AF4E19F8188200C1556C /* KFItem.h in Headers */,
+				4423AF2819F817AF00C1556C /* KastFeedKit.h in Headers */,
+				4423AF5219F8188B00C1556C /* KFImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4423AEF219F8160300C1556C /* Kast */ = {
@@ -125,10 +337,13 @@
 				4423AEEF19F8160300C1556C /* Sources */,
 				4423AEF019F8160300C1556C /* Frameworks */,
 				4423AEF119F8160300C1556C /* Resources */,
+				4423AF3E19F817AF00C1556C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4423AF3619F817AF00C1556C /* PBXTargetDependency */,
+				4423AF3A19F817AF00C1556C /* PBXTargetDependency */,
 			);
 			name = Kast;
 			productName = Kast;
@@ -153,6 +368,42 @@
 			productReference = 4423AF0B19F8160300C1556C /* KastTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4423AF2219F817AF00C1556C /* KastFeedKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4423AF3B19F817AF00C1556C /* Build configuration list for PBXNativeTarget "KastFeedKit" */;
+			buildPhases = (
+				4423AF1E19F817AF00C1556C /* Sources */,
+				4423AF1F19F817AF00C1556C /* Frameworks */,
+				4423AF2019F817AF00C1556C /* Headers */,
+				4423AF2119F817AF00C1556C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KastFeedKit;
+			productName = KastFeedKit;
+			productReference = 4423AF2319F817AF00C1556C /* KastFeedKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4423AF2C19F817AF00C1556C /* KastFeedKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4423AF3F19F817AF00C1556C /* Build configuration list for PBXNativeTarget "KastFeedKitTests" */;
+			buildPhases = (
+				4423AF2919F817AF00C1556C /* Sources */,
+				4423AF2A19F817AF00C1556C /* Frameworks */,
+				4423AF2B19F817AF00C1556C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4423AF2F19F817AF00C1556C /* PBXTargetDependency */,
+			);
+			name = KastFeedKitTests;
+			productName = KastFeedKitTests;
+			productReference = 4423AF2D19F817AF00C1556C /* KastFeedKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -166,6 +417,13 @@
 						CreatedOnToolsVersion = 6.0;
 					};
 					4423AF0A19F8160300C1556C = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 4423AEF219F8160300C1556C;
+					};
+					4423AF2219F817AF00C1556C = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					4423AF2C19F817AF00C1556C = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 4423AEF219F8160300C1556C;
 					};
@@ -186,6 +444,8 @@
 			targets = (
 				4423AEF219F8160300C1556C /* Kast */,
 				4423AF0A19F8160300C1556C /* KastTests */,
+				4423AF2219F817AF00C1556C /* KastFeedKit */,
+				4423AF2C19F817AF00C1556C /* KastFeedKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -197,7 +457,9 @@
 			files = (
 				4423AF0119F8160300C1556C /* Main.storyboard in Resources */,
 				4423AF0619F8160300C1556C /* LaunchScreen.xib in Resources */,
+				4474433619F82B5300899DBE /* KAPodcastTableViewCell.xib in Resources */,
 				4423AF0319F8160300C1556C /* Images.xcassets in Resources */,
+				4474433419F82B2600899DBE /* KAEpisodeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +470,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4423AF2119F817AF00C1556C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423AF2B19F817AF00C1556C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4477683519FF0A86004248C6 /* rss.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,8 +492,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4423AEFE19F8160300C1556C /* ViewController.swift in Sources */,
+				4423AF5E19F81E5900C1556C /* KAEpisode.swift in Sources */,
+				4423AF5C19F81E5900C1556C /* KAPodcast.swift in Sources */,
+				4423AF6319F81EB900C1556C /* KAPodcastSyncService.swift in Sources */,
+				4423AF4319F8180500C1556C /* KAPodcastsTableViewController.swift in Sources */,
 				4423AEFC19F8160300C1556C /* Kast.xcdatamodeld in Sources */,
+				4423AF6519F81FA300C1556C /* KAEpisodesTableViewController.swift in Sources */,
+				4474433A19F82B8F00899DBE /* KAPodcastTableViewCell.swift in Sources */,
+				4423AF6119F81EAE00C1556C /* KAPodcastDataService.swift in Sources */,
+				4474433819F82B8100899DBE /* KAEpisodeTableViewCell.swift in Sources */,
+				4423AF5619F81AFD00C1556C /* KACoreDataStack.swift in Sources */,
 				4423AEF919F8160300C1556C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +514,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4423AF1E19F817AF00C1556C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423AF5319F8188B00C1556C /* KFImage.m in Sources */,
+				4423AF4F19F8188200C1556C /* KFItem.m in Sources */,
+				4423AF4B19F8187700C1556C /* KFChannel.m in Sources */,
+				4423AF4719F8184700C1556C /* KFFeedParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4423AF2919F817AF00C1556C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4423AF3419F817AF00C1556C /* KastFeedKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -236,6 +540,21 @@
 			isa = PBXTargetDependency;
 			target = 4423AEF219F8160300C1556C /* Kast */;
 			targetProxy = 4423AF0C19F8160300C1556C /* PBXContainerItemProxy */;
+		};
+		4423AF2F19F817AF00C1556C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4423AEF219F8160300C1556C /* Kast */;
+			targetProxy = 4423AF2E19F817AF00C1556C /* PBXContainerItemProxy */;
+		};
+		4423AF3619F817AF00C1556C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4423AF2219F817AF00C1556C /* KastFeedKit */;
+			targetProxy = 4423AF3519F817AF00C1556C /* PBXContainerItemProxy */;
+		};
+		4423AF3A19F817AF00C1556C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4423AF2219F817AF00C1556C /* KastFeedKit */;
+			targetProxy = 4423AF3919F817AF00C1556C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -342,9 +661,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Kast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kast/Kast-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +674,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Kast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kast/Kast-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -392,6 +716,78 @@
 			};
 			name = Release;
 		};
+		4423AF3C19F817AF00C1556C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KastFeedKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4423AF3D19F817AF00C1556C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KastFeedKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4423AF4019F817AF00C1556C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KastFeedKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kast.app/Kast";
+			};
+			name = Debug;
+		};
+		4423AF4119F817AF00C1556C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KastFeedKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kast.app/Kast";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +807,7 @@
 				4423AF1719F8160300C1556C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4423AF1819F8160300C1556C /* Build configuration list for PBXNativeTarget "KastTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +816,25 @@
 				4423AF1A19F8160300C1556C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4423AF3B19F817AF00C1556C /* Build configuration list for PBXNativeTarget "KastFeedKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4423AF3C19F817AF00C1556C /* Debug */,
+				4423AF3D19F817AF00C1556C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4423AF3F19F817AF00C1556C /* Build configuration list for PBXNativeTarget "KastFeedKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4423AF4019F817AF00C1556C /* Debug */,
+				4423AF4119F817AF00C1556C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
