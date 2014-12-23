@@ -17,6 +17,10 @@
         self.pubDate = [dict objectForKey:@"pubDate"];
         self.link = [dict objectForKey:@"link"];
         self.itemDescription = [dict objectForKey:@"description"];
+        NSDictionary *enclosureDict = [dict objectForKey:@"enclosure"];
+        if ([enclosureDict count] > 0) {
+            self.enclosure = [[KFEnclosure alloc] initWithDictionary:enclosureDict];
+        }
     }
     return self;
 }

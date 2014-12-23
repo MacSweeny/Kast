@@ -14,6 +14,7 @@
 
 @property (copy, nonatomic) NSString *elementName;
 @property (strong, nonatomic) NSMutableDictionary *scope;
+@property (strong, nonatomic) NSDictionary *attributes;
 @property (strong, nonatomic) NSMutableString *text;
 
 - (id)initWithElementName:(NSString *)elementName;
@@ -52,6 +53,7 @@
 @interface KFFeedParser()
 
 @property (strong, nonatomic) NSData *data;
+@property (strong, nonatomic) NSURL *url;
 @property (strong, nonatomic) NSMutableArray *elementStack;
 @property (readonly) KFXMLElement *headElement;
 @property (strong, nonatomic) NSMutableArray *items;
@@ -69,9 +71,23 @@
     return self;
 }
 
+- (id)initWithURL:(NSURL *)url {
+    if (self = [super init]) {
+        self.url = url;
+    }
+    return self;
+}
+
 - (BOOL)parse {
     self.elementStack = [NSMutableArray new];
-    self.parser = [[NSXMLParser alloc] initWithData:self.data];
+    
+    if (self.url) {
+        self.parser = [[NSXMLParser alloc] initWithContentsOfURL:self.url];
+    } else {
+        self.parser = [[NSXMLParser alloc] initWithData:self.data];
+    }
+    
+//    [self.parser setShouldResolveExternalEntities:NO];
     [self.parser setDelegate:self];
     BOOL success = [self.parser parse];
     if (!success) {
@@ -82,19 +98,31 @@
 
 #pragma mark - NSXMLParserDelegate Methods
 
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"Error: %@", parseError);
+    [parser abortParsing];
+}
+
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    NSLog(@"did start elementName: %@", elementName);
     if (elementName) {
-        [self pushXMLElement:[[KFXMLElement alloc] initWithElementName:elementName]];
+        KFXMLElement *element = [[KFXMLElement alloc] initWithElementName:elementName];
+        if ([attributeDict count] > 0) {
+            element.attributes = [attributeDict copy];
+        }
+        [self pushXMLElement:element];
     }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    NSLog(@"foundCharacters");
     if (self.headElement) {
         [self.headElement.text appendString:string];
     }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock {
+    NSLog(@"foundCDATA");
     if (self.headElement) {
         NSString *string = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
         [self.headElement.text appendString:string];
@@ -102,6 +130,8 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    NSLog(@"did start elementName: %@", elementName);
+
     KFXMLElement *element = [self popXMLElement];
     if (element) {
         if (self.headElement) {
@@ -110,6 +140,8 @@
             } else {
                 if ([element.text length] > 0) {
                     [self.headElement.scope setObject:element.text forKey:element.elementName];
+                } else if ([element.attributes count] > 0) {
+                    [self.headElement.scope setObject:element.attributes forKey:element.elementName];
                 }
             }
         } else {

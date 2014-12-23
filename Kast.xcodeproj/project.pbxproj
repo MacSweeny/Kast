@@ -37,6 +37,10 @@
 		4474433819F82B8100899DBE /* KAEpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474433719F82B8100899DBE /* KAEpisodeTableViewCell.swift */; };
 		4474433A19F82B8F00899DBE /* KAPodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4474433919F82B8F00899DBE /* KAPodcastTableViewCell.swift */; };
 		4477683519FF0A86004248C6 /* rss.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4477683319FF0A86004248C6 /* rss.xml */; };
+		44B8B01E1A48F35F0013515A /* KAEpisodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8B01D1A48F35F0013515A /* KAEpisodeTableViewController.swift */; };
+		44F1476C1A44CA910059733F /* KAPodcastDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F1476B1A44CA910059733F /* KAPodcastDownloadService.swift */; };
+		44F1476F1A44E2D00059733F /* KFEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F1476D1A44E2D00059733F /* KFEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44F147701A44E2D00059733F /* KFEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F1476E1A44E2D00059733F /* KFEnclosure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +126,10 @@
 		4474433719F82B8100899DBE /* KAEpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAEpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		4474433919F82B8F00899DBE /* KAPodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastTableViewCell.swift; sourceTree = "<group>"; };
 		4477683319FF0A86004248C6 /* rss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = rss.xml; sourceTree = "<group>"; };
+		44B8B01D1A48F35F0013515A /* KAEpisodeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAEpisodeTableViewController.swift; sourceTree = "<group>"; };
+		44F1476B1A44CA910059733F /* KAPodcastDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAPodcastDownloadService.swift; sourceTree = "<group>"; };
+		44F1476D1A44E2D00059733F /* KFEnclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFEnclosure.h; sourceTree = "<group>"; };
+		44F1476E1A44E2D00059733F /* KFEnclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFEnclosure.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +232,7 @@
 		4423AF1B19F816C500C1556C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				44B8B01D1A48F35F0013515A /* KAEpisodeTableViewController.swift */,
 				4423AF6419F81FA300C1556C /* KAEpisodesTableViewController.swift */,
 				4423AF4219F8180500C1556C /* KAPodcastsTableViewController.swift */,
 			);
@@ -236,6 +245,8 @@
 				4423AF2719F817AF00C1556C /* KastFeedKit.h */,
 				4423AF4819F8187700C1556C /* KFChannel.h */,
 				4423AF4919F8187700C1556C /* KFChannel.m */,
+				44F1476D1A44E2D00059733F /* KFEnclosure.h */,
+				44F1476E1A44E2D00059733F /* KFEnclosure.m */,
 				4423AF4419F8184700C1556C /* KFFeedParser.h */,
 				4423AF4519F8184700C1556C /* KFFeedParser.m */,
 				4423AF5019F8188A00C1556C /* KFImage.h */,
@@ -288,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				4423AF6019F81EAE00C1556C /* KAPodcastDataService.swift */,
+				44F1476B1A44CA910059733F /* KAPodcastDownloadService.swift */,
 				4423AF6219F81EB900C1556C /* KAPodcastSyncService.swift */,
 			);
 			name = Services;
@@ -321,6 +333,7 @@
 			files = (
 				4423AF4619F8184700C1556C /* KFFeedParser.h in Headers */,
 				4423AF4A19F8187700C1556C /* KFChannel.h in Headers */,
+				44F1476F1A44E2D00059733F /* KFEnclosure.h in Headers */,
 				4423AF4E19F8188200C1556C /* KFItem.h in Headers */,
 				4423AF2819F817AF00C1556C /* KastFeedKit.h in Headers */,
 				4423AF5219F8188B00C1556C /* KFImage.h in Headers */,
@@ -500,6 +513,8 @@
 				4423AF6519F81FA300C1556C /* KAEpisodesTableViewController.swift in Sources */,
 				4474433A19F82B8F00899DBE /* KAPodcastTableViewCell.swift in Sources */,
 				4423AF6119F81EAE00C1556C /* KAPodcastDataService.swift in Sources */,
+				44B8B01E1A48F35F0013515A /* KAEpisodeTableViewController.swift in Sources */,
+				44F1476C1A44CA910059733F /* KAPodcastDownloadService.swift in Sources */,
 				4474433819F82B8100899DBE /* KAEpisodeTableViewCell.swift in Sources */,
 				4423AF5619F81AFD00C1556C /* KACoreDataStack.swift in Sources */,
 				4423AEF919F8160300C1556C /* AppDelegate.swift in Sources */,
@@ -520,6 +535,7 @@
 			files = (
 				4423AF5319F8188B00C1556C /* KFImage.m in Sources */,
 				4423AF4F19F8188200C1556C /* KFItem.m in Sources */,
+				44F147701A44E2D00059733F /* KFEnclosure.m in Sources */,
 				4423AF4B19F8187700C1556C /* KFChannel.m in Sources */,
 				4423AF4719F8184700C1556C /* KFFeedParser.m in Sources */,
 			);

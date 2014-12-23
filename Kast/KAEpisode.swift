@@ -9,13 +9,32 @@
 import Foundation
 import CoreData
 
+enum KAMediaDownloadStatus: NSNumber {
+    case Missing = 0
+    case Downloading = 1
+    case Paused = 2
+    case Complete = 3
+}
+
 @objc(KAEpisode)
 class KAEpisode: NSManagedObject {
 
     @NSManaged var guid: String
     @NSManaged var link: String?
+    @NSManaged var mediaType: String?
+    @NSManaged var mediaURLString: String?
+    @NSManaged var mediaDownloadStatusNumber: NSNumber
     @NSManaged var pubDate: NSDate?
     @NSManaged var title: String?
     @NSManaged var podcast: KAPodcast
 
+    var mediaDownloadStatus: KAMediaDownloadStatus {
+        get {
+            return KAMediaDownloadStatus(rawValue: mediaDownloadStatusNumber)!
+        }
+        set {
+            mediaDownloadStatusNumber = newValue.rawValue
+        }
+    }
+    
 }

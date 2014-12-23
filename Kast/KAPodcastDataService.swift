@@ -10,6 +10,14 @@ import UIKit
 import CoreData
 
 class KAPodcastDataService: NSObject {
+    
+    class func podcastEpisodesFRC(guid: String, podcastLink: String, managedObjectContext: NSManagedObjectContext, cacheName: NSString?) -> NSFetchedResultsController {
+        var fetchRequest = NSFetchRequest(entityName: "Episode")
+        fetchRequest.predicate = NSPredicate(format: "podcast.link = %@ AND guid = %@", podcastLink, guid)
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "pubDate", ascending: false) ]
+        
+        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: cacheName)
+    }
    
     class func podcastEpisodesFRC(podcastLink: String, managedObjectContext: NSManagedObjectContext, cacheName: NSString?) -> NSFetchedResultsController {
         var fetchRequest = NSFetchRequest(entityName: "Episode")

@@ -59,6 +59,17 @@ class KAEpisodesTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let episode = frc?.objectAtIndexPath(indexPath) as KAEpisode?
+        
+        if let guid = episode?.guid {
+            if let podcastLink = episode?.podcast.link {
+                let episodeController = KAEpisodeTableViewController(guid: guid, podcastLink: podcastLink);
+                navigationController?.pushViewController(episodeController, animated: true)
+            }
+        }
+    }
+    
 }
 

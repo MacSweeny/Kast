@@ -9,11 +9,22 @@
 import UIKit
 import CoreData
 
-class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate {
 
+    private var collapseDetailViewController = true
+    
     var managedObjectContext: NSManagedObjectContext? = nil
     var newPodcastModalViewController: UINavigationController? = nil
     let podcastSyncService = KAPodcastSyncService()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let moc = KACoreDataStack.sharedInstance.managedObjectContext!
+        let frc = KAPodcastDataService.podcastsFRC(moc, cacheName: nil)
+        
+        frc.delegate = self
+        
+        return frc
+        }()
     
     override func viewDidLoad() {
         
@@ -22,6 +33,10 @@ class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl!)
+        refreshControl?.addTarget(self, action: "refreshPodcasts:", forControlEvents: UIControlEvents.ValueChanged)
+        
         //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         let newButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "enterNewPodcast:")
@@ -29,8 +44,18 @@ class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsCont
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "promptNewPodcast:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        var error: NSError? = nil
+        if !self.fetchedResultsController.performFetch(&error) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //println("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
+        
         super.viewDidLoad()
 
+        splitViewController?.delegate = self
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -43,6 +68,23 @@ class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsCont
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshPodcasts(sender: AnyObject) {
+        /*
+        var feedURLs = [String]()
+        for object in fetchedResultsController.fetchedObjects! as [NSManagedObject] {
+            feedURLs.append(object.valueForKey("link") as String )
+        }
+        */
+        
+        let feedURLs = [ "http://dameshek.libsyn.com/rss", "http://www.npr.org/rss/rss.php?id=1033", "http://norm.videopodcastnetwork.libsynpro.com/rss" ];
+
+        self.podcastSyncService.refreshFeedsWithURLs(feedURLs, completion: { () -> Void in
+            if let refreshControl = self.refreshControl {
+                refreshControl.endRefreshing()
+            }
+        })
     }
     
     func enterNewPodcast(sender: AnyObject) {
@@ -138,6 +180,8 @@ class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        collapseDetailViewController = false
+        
         let podcast = self.fetchedResultsController.objectAtIndexPath(indexPath) as KAPodcast
         let controller = KAEpisodesTableViewController()
         controller.podcastLink = podcast.valueForKey("link") as String?
@@ -152,44 +196,13 @@ class KAPodcastsTableViewController: UITableViewController, NSFetchedResultsCont
         cell.titleLabel?.text = object.valueForKey("title")!.description
     }
     
-    // MARK: - Fetched results controller
+    // MARK: - Split view controller delegate
     
-    var fetchedResultsController: NSFetchedResultsController {
-        if _fetchedResultsController != nil {
-            return _fetchedResultsController!
-            }
-            
-            let fetchRequest = NSFetchRequest()
-            // Edit the entity name as appropriate.
-            let entity = NSEntityDescription.entityForName("Podcast", inManagedObjectContext: self.managedObjectContext!)
-            fetchRequest.entity = entity
-            
-            // Set the batch size to a suitable number.
-            fetchRequest.fetchBatchSize = 20
-            
-            // Edit the sort key as appropriate.
-            let sortDescriptor = NSSortDescriptor(key: "title", ascending: false)
-            let sortDescriptors = [sortDescriptor]
-            
-            fetchRequest.sortDescriptors = [sortDescriptor]
-            
-            // Edit the section name key path and cache name if appropriate.
-            // nil for section name key path means "no sections".
-            let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
-            aFetchedResultsController.delegate = self
-            _fetchedResultsController = aFetchedResultsController
-            
-            var error: NSError? = nil
-            if !_fetchedResultsController!.performFetch(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                //println("Unresolved error \(error), \(error.userInfo)")
-                abort()
-            }
-            
-            return _fetchedResultsController!
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
+        return collapseDetailViewController
     }
-    var _fetchedResultsController: NSFetchedResultsController? = nil
+    
+    // MARK: - Fetched results controller
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()

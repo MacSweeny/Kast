@@ -15,6 +15,7 @@
 @property (readonly) KFChannel *channel;
 
 - (id)initWithData:(NSData *)data;
+- (id)initWithURL:(NSURL *)url;
 
 - (BOOL)parse;
 

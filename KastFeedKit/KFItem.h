@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "KFEnclosure.h"
+
 @interface KFItem : NSObject
 
 @property (copy, nonatomic) NSString *guid;
@@ -15,6 +17,7 @@
 @property (copy, nonatomic) NSString *pubDate;
 @property (copy, nonatomic) NSString *link;
 @property (copy, nonatomic) NSString *itemDescription;
+@property (strong, nonatomic) KFEnclosure *enclosure;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
