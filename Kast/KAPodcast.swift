@@ -12,6 +12,7 @@ import CoreData
 @objc(KAPodcast)
 class KAPodcast: NSManagedObject {
 
+    @NSManaged var podcastID: String
     @NSManaged var imageUrl: String?
     @NSManaged var link: String
     @NSManaged var title: String?

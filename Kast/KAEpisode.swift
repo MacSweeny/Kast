@@ -19,6 +19,8 @@ enum KAMediaDownloadStatus: NSNumber {
 @objc(KAEpisode)
 class KAEpisode: NSManagedObject {
 
+    @NSManaged var downloadURLString: String?
+    @NSManaged var episodeID: String
     @NSManaged var guid: String
     @NSManaged var link: String?
     @NSManaged var mediaType: String?

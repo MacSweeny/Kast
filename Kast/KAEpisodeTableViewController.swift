@@ -111,6 +111,11 @@ class KAEpisodeTableViewController: UITableViewController, NSFetchedResultsContr
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 3 {
             // download
+            if let episode = fetchedResultsController.fetchedObjects?.first as KAEpisode? {
+                if let urlString = episode.mediaURLString {
+                    KAPodcastDownloadService.sharedInstance.downloadEpisode(episode.episodeID, podcastID: episode.podcast.podcastID, urlString: urlString)
+                }
+            }
         }
     }
     
@@ -159,5 +164,9 @@ class KAEpisodeTableViewController: UITableViewController, NSFetchedResultsContr
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.reloadData()
+    }
 
 }

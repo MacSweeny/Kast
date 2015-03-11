@@ -49,8 +49,8 @@ class KAPodcastSyncService: NSObject, NSURLSessionTaskDelegate {
             podcast = fetchResults!.first as KAPodcast
         } else {
             podcast = NSEntityDescription.insertNewObjectForEntityForName("Podcast", inManagedObjectContext: managedObjectContext) as KAPodcast
+            podcast.podcastID = NSUUID().UUIDString
         }
-        
         podcast.title = channel.title
         podcast.link = channel.link!
         podcast.imageUrl = channel.image.url
@@ -65,6 +65,7 @@ class KAPodcastSyncService: NSObject, NSURLSessionTaskDelegate {
                 let matches = episodes.filteredSetUsingPredicate(itemPredicate)
                 if (matches.count == 0) {
                     let episode = NSEntityDescription.insertNewObjectForEntityForName("Episode", inManagedObjectContext: managedObjectContext) as KAEpisode
+                    episode.episodeID = NSUUID().UUIDString
                     episode.guid = item.guid!
                     episode.title = item.title
                     episode.link = item.link
